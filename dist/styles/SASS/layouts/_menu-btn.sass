@@ -1,0 +1,95 @@
+=button_shaping
+    width: 40px
+    height: 6px
+
+    background:$dynamic-brand-main
+
+    border-radius: 5px
+    //box-shadow: 0 2px 5px rgba(255, 101, 47, .2)
+    box-shadow: 3px 3px 3px #523c3f
+    transition: all .5s ease-in-out
+
+.menuBtn
+    //bottom: 0
+    //position: absolute
+    //width: 100%
+    //z-index: 2
+
+.menu-btn 
+    //position: relative
+    bottom: 5px
+    left: 5px
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: left
+
+    width: 80px
+    height: 80px
+    z-index: 2
+
+    cursor: pointer
+    transition: all .5s ease-in-out
+.menu-btn-burger 
+    +button_shaping
+.menu-btn-burger:before,
+.menu-btn-burger:after
+    content: ''
+    position: absolute
+    +button_shaping
+.menu-btn-burger:before 
+    transform: translateY(-16px)
+.menu-btn-burger:after 
+    transform: translateY(16px)
+
+
+.menu-btn:hover .menu-btn-burger,
+.menu-btn:hover .menu-btn-burger:before,
+.menu-btn:hover .menu-btn-burger:after
+    background-color: white
+
+/*    Animation    */
+.menu-btn.open 
+    border-color: transparent
+.menu-btn.open .menu-btn-burger
+    transform: translateX(-50px)
+    background: transparent
+    box-shadow: none
+
+.menu-btn.open .menu-btn-burger::before 
+    animation: before 1s ease-in-out forwards
+.menu-btn.open .menu-btn-burger::after 
+    animation: after 1s ease-in-out forwards
+.menu-btn.close .menu-btn-burger::before 
+    animation: before-reverse 1s ease-in-out forwards
+.menu-btn.close .menu-btn-burger::after 
+    animation: after-reverse 1s ease-in-out forwards
+
+@keyframes before
+    50% 
+        transform: rotate(-45deg) translate(70px, 0)
+    100%
+        transform: rotate(45deg) translate(35px, -35px)
+        border-radius: 0
+@keyframes after 
+    50% 
+        transform: rotate(45deg) translate(70px, 0)
+    100% 
+        transform: rotate(-45deg) translate(35px, 35px)
+        border-radius: 0
+
+@keyframes before-reverse
+    0% 
+        transform: rotate(45deg) translate(35px, -35px)
+    66% 
+        transform: rotate(-45deg) translate(70px, 0)
+    100% 
+        transform: translate(0, -16px)
+@keyframes after-reverse 
+    0% 
+        transform: rotate(-45deg) translate(35px, 35px)  
+    66%
+        transform: rotate(45deg) translate(70px, 0)
+    100% 
+        transform: translate(0, 16px)

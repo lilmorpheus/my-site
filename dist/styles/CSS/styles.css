@@ -1,0 +1,621 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c0bebf;
+  background-image: url("/res/Background_Img_v2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  display: flex;
+  color: #ffb5c2;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.2rem;
+  text-shadow: 0.09em 0.09em 0.09em #523c3f;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/*I think I want the background to be static, with the idea of 
+ *  more of the image shown depending on screen dimensions
+ *
+ *  Then you can scroll down  and see more content without the image moving.
+ *      This means the body (background) is just the window essentially
+ *      Then I ahve the wrapper which contains the content which is the size of the whole content
+ *
+ *  Ideally I think it would be nice that the title starts in the middle and as you scroll it moves up
+ *      and then settles smaller at teh top of the page
+ *  I think thsi is goig to require designing before it can actually be implemented. Also
+ *      I might just keep my about page simle for now and base similar to Charley's*/
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.wrapper.projects {
+  overflow-x: scroll;
+}
+.wrapper.about {
+  overflow-y: scroll;
+}
+
+h1, h2 {
+  margin: auto;
+  padding: auto;
+  color: #f382c0;
+  text-shadow: 0.05em 0.05em 0.05em #523c3f;
+}
+
+.page-container {
+  display: flex;
+  align-content: center;
+}
+.page-container.about {
+  flex-direction: column;
+  min-width: 100%;
+}
+.page-container.project {
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding: 50px 0;
+  margin: auto;
+}
+
+.content-box {
+  height: 70vh;
+  width: 35vw;
+  margin: auto 5vw;
+  border-radius: 5px;
+  border: 10px solid #f382c0;
+  overflow: hidden;
+}
+
+.content-box img {
+  width: 100%;
+}
+
+.content-box .text-container {
+  background-color: rgba(192, 190, 191, 0.8);
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem;
+}
+.content-box .text-container p {
+  opacity: 1;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+@media (orientation: portrait) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content-box {
+    width: 70vw;
+    height: auto;
+    margin: 5vh auto;
+  }
+}
+.pg-footer {
+  position: absolute;
+  margin-right: 10px;
+  bottom: 0;
+  right: 0;
+}
+
+.overlay {
+  height: 0%;
+  width: 0%;
+  position: absolute;
+  z-index: 1;
+  bottom: 2.75rem;
+  left: 2.75rem;
+  background-color: #523c3f;
+  opacity: 0.9;
+  overflow: hidden;
+  transition: 1s;
+  display: flex;
+  letter-spacing: 1px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.overlay-content {
+  display: block;
+  position: relative;
+  top: 15%;
+}
+
+.overlay-link {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  opacity: 1;
+  font-size: 3rem;
+  color: #f382c0;
+  transition: 0.5s;
+}
+
+.overlay-link:hover {
+  color: #e5fbf8;
+}
+
+.overlay s {
+  color: #031315;
+}
+
+.title-content {
+  display: flex;
+  margin-top: auto;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+}
+
+.title-box {
+  margin: auto;
+  width: 60%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.title-msg-sm {
+  font-size: 4rem;
+}
+
+.title-msg-md {
+  font-size: 7rem;
+}
+
+.title-msg-lg {
+  font-size: 10rem;
+  line-height: 0.75;
+}
+
+@media all and (max-width: 600px) {
+  .title-msg-sm {
+    font-size: 1rem;
+  }
+
+  .title-msg-md {
+    font-size: 4rem;
+    line-height: 0.75;
+  }
+
+  .title-msg-lg {
+    font-size: 7rem;
+    line-height: 0.75;
+  }
+}
+/*#annoying-title
+ *  margin-right: 300px*/
+.menu-btn {
+  bottom: 5px;
+  left: 5px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn-burger {
+  width: 40px;
+  height: 6px;
+  background: #f382c0;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #523c3f;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn-burger:before,
+.menu-btn-burger:after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 6px;
+  background: #f382c0;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #523c3f;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn-burger:before {
+  transform: translateY(-16px);
+}
+
+.menu-btn-burger:after {
+  transform: translateY(16px);
+}
+
+.menu-btn:hover .menu-btn-burger,
+.menu-btn:hover .menu-btn-burger:before,
+.menu-btn:hover .menu-btn-burger:after {
+  background-color: white;
+}
+
+/*    Animation    */
+.menu-btn.open {
+  border-color: transparent;
+}
+
+.menu-btn.open .menu-btn-burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn-burger::before {
+  animation: before 1s ease-in-out forwards;
+}
+
+.menu-btn.open .menu-btn-burger::after {
+  animation: after 1s ease-in-out forwards;
+}
+
+.menu-btn.close .menu-btn-burger::before {
+  animation: before-reverse 1s ease-in-out forwards;
+}
+
+.menu-btn.close .menu-btn-burger::after {
+  animation: after-reverse 1s ease-in-out forwards;
+}
+
+@keyframes before {
+  50% {
+    transform: rotate(-45deg) translate(70px, 0);
+  }
+  100% {
+    transform: rotate(45deg) translate(35px, -35px);
+    border-radius: 0;
+  }
+}
+@keyframes after {
+  50% {
+    transform: rotate(45deg) translate(70px, 0);
+  }
+  100% {
+    transform: rotate(-45deg) translate(35px, 35px);
+    border-radius: 0;
+  }
+}
+@keyframes before-reverse {
+  0% {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  66% {
+    transform: rotate(-45deg) translate(70px, 0);
+  }
+  100% {
+    transform: translate(0, -16px);
+  }
+}
+@keyframes after-reverse {
+  0% {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+  66% {
+    transform: rotate(45deg) translate(70px, 0);
+  }
+  100% {
+    transform: translate(0, 16px);
+  }
+}
+.title-scroll {
+  display: flex;
+}
+
+.scroll-txt {
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-container {
+  width: 80px;
+  margin: auto;
+}
+
+.scroll-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  /*border: 3px solid white;*/
+}
+
+.scroll-left,
+.scroll-right {
+  width: 25px;
+  height: 6px;
+  background: #f382c0;
+  box-shadow: 3px 3px 3px #523c3f;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #523c3f;
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-left {
+  transform: rotate(25deg) translate(6px, 6px);
+}
+
+.scroll-right {
+  transform: rotate(-25deg) translate(-6px, 6px);
+}
+
+.scroll-left:before,
+.scroll-right:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 6px;
+  background: #f382c0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-16px);
+}
+
+/*    Animation   */
+.scroll-btn:hover .scroll-left,
+.scroll-btn:hover .scroll-right,
+.scroll-btn.animated .scroll-left,
+.scroll-btn.animated .scroll-right {
+  width: 40px;
+}
+.scroll-btn:hover .scroll-left::before,
+.scroll-btn:hover .scroll-right::before,
+.scroll-btn.animated .scroll-left::before,
+.scroll-btn.animated .scroll-right::before {
+  width: 15px;
+}
+.scroll-btn:hover .scroll-left,
+.scroll-btn.animated .scroll-left {
+  transform: rotate(25deg) translate(12px, 16px);
+}
+.scroll-btn:hover .scroll-right,
+.scroll-btn.animated .scroll-right {
+  transform: rotate(-25deg) translate(-12px, 16px);
+}
+.scroll-btn:hover .scroll-left::before,
+.scroll-btn.animated .scroll-left::before {
+  transform: translate(13px, -25px);
+  box-shadow: 3px 3px 3px #523c3f;
+}
+.scroll-btn:hover .scroll-right::before,
+.scroll-btn.animated .scroll-right::before {
+  transform: translate(11px, -25px);
+  box-shadow: 3px 3px 3px #523c3f;
+}
+.scroll-btn:hover + .scroll-txt,
+.scroll-btn.animated + .scroll-txt {
+  opacity: 0;
+}
+
+.scroll-ico {
+  display: none;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: repeat(4, 25%);
+  grid-column-gap: 30px;
+  grid-row-gap: 40px;
+  margin: auto;
+  width: 100%;
+  padding: 0 100px;
+  justify-content: center;
+  align-content: center;
+}
+.project-grid .box {
+  display: block;
+  width: 325px;
+  height: 210px;
+  border: 5px solid #523c3f;
+  box-shadow: 5px 10px;
+  transition: all 0.5s ease-in-out;
+  background-image: url("/res/project_filler_img.png");
+  background-size: cover;
+  overflow: hidden;
+}
+.project-grid .box .box-header {
+  text-align: right;
+  width: 100%;
+  padding-right: 10px;
+}
+.project-grid .box .box-header .domain-txt {
+  font-size: 0.75rem;
+}
+.project-grid .box .box-header .name-txt {
+  font-size: 1.25rem;
+}
+.project-grid .box .box-desc {
+  background-color: rgba(192, 190, 191, 0.8);
+  height: 0;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  top: 100px;
+  font-size: 0.8rem;
+  color: #523c3f;
+  text-shadow: 0.05rem 0.05rem 0.05rem #ffb5c2;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+.project-grid .box .box-desc p {
+  margin: 10px;
+}
+.project-grid .box:hover {
+  width: 340px;
+  height: 225px;
+  cursor: pointer;
+  border: 5px solid #ffb5c2;
+  box-shadow: 15px 15px 20px rgba(255, 181, 194, 0.4), 15px 15px 20px #523c3f;
+}
+.project-grid .box:hover .box-desc {
+  top: 0;
+  height: 100%;
+}
+.project-grid .box.empty {
+  opacity: 0;
+  /*I think the best option rn is too just have empty boxes and fill as go along
+  * then fix when project exceds 8*/
+}
+
+@media (max-height: 600px) {
+  .project-grid {
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(8, 12%);
+    grid-column-gap: 30px;
+    grid-row-gap: none;
+  }
+}
+.button-link {
+  border-style: solid;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color: #f382c0;
+}
+
+.button-link:hover {
+  background-color: #f382c0;
+  box-shadow: 0px 15px 20px rgba(255, 181, 194, 0.4);
+  color: #e5fbf8;
+  transform: translateY(-7px);
+}
+
+.txt-xs {
+  height: 90%;
+  width: 22%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.txt-sm {
+  height: 90%;
+  width: 33%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.txt-md {
+  height: 90%;
+  width: 40%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.txt-lg {
+  height: 90%;
+  width: 70%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.txt-xl {
+  height: 90%;
+  width: 90%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#about-title {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Grid Seetings */
+div[class^=col] {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.col-0-5 {
+  width: 4.16%;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

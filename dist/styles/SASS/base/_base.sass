@@ -1,0 +1,57 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: $brand-light
+    background-image: url("/res/Background_Img_v2.png")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position-x: center
+    display: flex
+
+    color:  $calm-brand-main
+    font-family: 'Indie Flower', cursive
+    font-size: 1.2rem
+    text-shadow: 0.09em 0.09em 0.09em $brand-dark
+
+    justify-content: center
+    align-items: center
+
+    width: 100vw//Added 27th Jan 2022
+    min-height: 100vh
+    overflow: hidden
+
+
+/*I think I want the background to be static, with the idea of 
+    more of the image shown depending on screen dimensions
+
+    Then you can scroll down  and see more content without the image moving.
+        This means the body (background) is just the window essentially
+        Then I ahve the wrapper which contains the content which is the size of the whole content
+
+    Ideally I think it would be nice that the title starts in the middle and as you scroll it moves up
+        and then settles smaller at teh top of the page
+            
+    I think thsi is goig to require designing before it can actually be implemented. Also
+        I might just keep my about page simle for now and base similar to Charley's*/
+.wrapper
+    display: flex
+    width: 100%
+    height: 100vh
+    overflow: hidden
+
+    &.projects
+        overflow-x: scroll
+
+    &.about
+        overflow-y: scroll
+
+h1, h2
+    //Outline text-shadow: 1px 1px 0 $brand-dark, -1px 1px 0 $brand-dark, 1px -1px 0 $brand-dark, -1px -1px 0 $brand-dark
+    margin: auto
+    padding: auto
+    color:  $dynamic-brand-main
+    text-shadow: 0.05em 0.05em 0.05em $brand-dark
+    

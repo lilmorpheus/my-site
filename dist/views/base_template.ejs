@@ -1,0 +1,31 @@
+<!--        Overlay        -->
+<div id='Nav-Pge' class='overlay'>
+    <div class='overlay-content'>
+        <a href='/' class="overlay-link"><b>Home</b></a>
+        <a href='/About' class="overlay-link"><b>About</b></a>
+        <!--<a href='/Projects' class="overlay-link"><b>List of Projects</b></a>-->
+        <a href='/Projects' class="overlay-link"><b>Portfolio</b></a>
+        <a href='#' class="overlay-link"><b><s>List of Projects</s></b></a>
+        <a class="button-link overlay-link" href='/client'><b>Client</b></a>
+    </div>
+</div>
+
+<!--Hamburger Button-->
+<div class="menu-btn">
+    <div class="menu-btn-burger"></div>
+</div>
+
+<!--   Page Content    -->
+<div class="wrapper <%= page %>" id="wrapper">
+    <!-- Need to figure out how to identofy when on about page-->
+    <%- include('./genreal/' + page + '.ejs') %>
+</div>
+
+<!--Footer-->
+<footer class="pg-footer">
+    <div class="container-fluid">
+        <div class="author-tags">By littleMorpheus (<a href="https://www.instagram.com/littlemorpheus/" class="social-link">@littleMorpheus</a>)</div>
+    </div>
+</footer>
+
+<script src="/scripts/scripts.js"></script>

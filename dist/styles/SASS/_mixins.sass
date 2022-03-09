@@ -1,0 +1,20 @@
+=shaping($height, $width, $rad)
+    height:                 $height
+    width:                  $width
+    -webkit-border-radius:  $rad 
+    -moz-border-radius:     $rad
+    -ms-border-radius:      $rad
+    border-radius:          $rad
+
+=center
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+=center_x
+    left: 50%
+    transform: translate(-50%, 0)
+
+=center_y
+    top: 50%
+    transform: translate(0, -50%)

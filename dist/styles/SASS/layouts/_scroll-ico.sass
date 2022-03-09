@@ -1,0 +1,72 @@
+.title-scroll
+    display: flex
+    
+.scroll-txt
+    transition: all .5s ease-in-out
+    
+.scroll-container
+    width: 80px
+    margin: auto
+
+.scroll-btn 
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: left
+
+    width: 80px
+    height: 60px
+
+    cursor: pointer
+    transition: all .5s ease-in-out
+    /*border: 3px solid white;*/
+
+.scroll-left,
+.scroll-right 
+    width: 25px
+    height: 6px
+
+    background: $dynamic-brand-main
+    box-shadow: 3px 3px 3px #523c3f
+    border-radius: 5px
+    box-shadow: 3px 3px 3px #523c3f
+    transition: all .3s ease-in-out
+.scroll-left
+    transform: rotate(25deg) translate(6px, 6px)
+.scroll-right
+    transform: rotate(-25deg) translate(-6px, 6px)
+
+.scroll-left:before,
+.scroll-right:before 
+    content: ''
+    position: absolute
+    width: 25px
+    height: 6px
+    background: $dynamic-brand-main
+    border-radius: 5px
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2)
+    transition: all .3s ease-in-out
+    transform: translateY(-16px)
+
+/*    Animation   */
+.scroll-btn:hover,
+.scroll-btn.animated
+    .scroll-left,
+    .scroll-right
+        width: 40px
+    .scroll-left::before,
+    .scroll-right::before 
+        width: 15px
+    .scroll-left
+        transform: rotate(25deg) translate(12px, 16px)
+    .scroll-right
+        transform: rotate(-25deg) translate(-12px, 16px)
+    .scroll-left::before
+        transform: translate(13px, -25px)
+        box-shadow: 3px 3px 3px #523c3f
+    .scroll-right::before
+        transform: translate(11px, -25px) 
+        box-shadow: 3px 3px 3px #523c3f
+    + .scroll-txt
+        opacity: 0

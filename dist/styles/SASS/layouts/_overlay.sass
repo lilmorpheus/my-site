@@ -1,0 +1,41 @@
+.overlay
+    height: 0%
+    width: 0%
+    position: absolute
+    z-index: 1
+    bottom: 2.75rem //dependent on hamburger icon location 
+    left: 2.75rem //dependent on hamburger icon location s
+    background-color: $brand-dark
+    opacity: 0.9
+    overflow: hidden
+    transition: 1s
+    display: flex
+    letter-spacing: 1px
+
+    justify-content: center
+    align-content: center
+    text-align: center
+
+.overlay-content
+    display: block
+    position: relative
+    top: 15% //Not Ideal, but works
+    //width: 20%
+    //width: 256px
+
+.overlay-link
+    display: block
+    padding: 5px
+    
+    text-decoration: none
+    opacity: 1
+    font-size: 3rem
+    color:  $dynamic-brand-main
+
+    transition: 0.5s
+
+.overlay-link:hover
+    color: $brand-white
+
+.overlay s
+    color: $brand-black
