@@ -20,7 +20,8 @@ var path = require('path');
 app.use('/res', express.static(path.join(__dirname, "/res/")));
 app.use('/styles', express.static(path.join(__dirname, "/dist/styles/")));
 app.use('/scripts', express.static(path.join(__dirname, "/dist/scripts/")));
-app.use('/views', express.static(path.join(__dirname, "/dist/views/")));
+app.set('views', path.join(__dirname, "/dist/views/"));
+var portfolio = require('./res/portfolio.json')
 
 /*                Requests                */
             /*      GET     */  
@@ -39,7 +40,11 @@ app.get('/client', function(req, res) {
     res.render('index.ejs', {page: 'woi-page'});
 });
 app.get('/projects', function(req, res) {
-    res.render('index.ejs', {page: 'projects'});
+    console.log(portfolio)
+    res.render('index.ejs', {
+        page: 'projects',
+        data: portfolio
+    });
     //Django Application
 });
 
