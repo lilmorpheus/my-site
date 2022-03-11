@@ -20,10 +20,16 @@
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Aenean vel lacus lobortis, bibendum lorem vitae, posuere ipsum. 
-                                Donec interdum turpis eu diam finibus, nec ultricies felis vulputate. 
+                                Donec interdum turpis eu diam finibus,  nec ultricies felis vulputate. 
                                 Integer ac dolor odio. Vivamus facilisis lorem ante, vel semper ipsum varius sed. 
                                 Nulla ut scelerisque ipsum. Donec faucibus hendrerit consequat. 
                                 Duis luctus fringilla leo, et vulputate magna laoreet ut. 
+
+                                <% if (item.link) {%>
+                                    <br>
+                                    Link: <a href="<%=item.link%>" target="_blank"><%=item.link%></a><br>
+                                    GitHub Repo: <a href="#" target="_blank"><%=item.GitHub%></a>
+                                <% } %>
                             </p>
                         </div>
                     </div>
