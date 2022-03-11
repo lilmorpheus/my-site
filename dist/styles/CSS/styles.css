@@ -440,7 +440,6 @@ h1, h2 {
   border: 5px solid #523c3f;
   box-shadow: 5px 10px;
   transition: all 0.5s ease-in-out;
-  background-image: url("/res/project_filler_img.png");
   background-size: cover;
   overflow: hidden;
 }
@@ -449,10 +448,15 @@ h1, h2 {
   width: 100%;
   padding-right: 10px;
 }
-.project-grid .box .box-header .domain-txt {
+.project-grid .box .box-header span {
+  text-shadow: -1px -1px #523c3f, 1px -1px #523c3f, -1px 1px #523c3f, 1px 1px #523c3f;
+  font-weight: 900;
+  color: #f382c0;
+}
+.project-grid .box .box-header span.domain-txt {
   font-size: 0.75rem;
 }
-.project-grid .box .box-header .name-txt {
+.project-grid .box .box-header span.name-txt {
   font-size: 1.25rem;
 }
 .project-grid .box .box-desc {

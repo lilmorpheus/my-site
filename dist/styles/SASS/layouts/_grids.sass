@@ -26,7 +26,6 @@
 
         transition: all 0.5s ease-in-out
         
-        background-image: url('/res/project_filler_img.png')
         background-size: cover
 
         overflow: hidden
@@ -35,14 +34,18 @@
             text-align: right
             width: 100%
             padding-right: 10px
-            text-shadow: 1em 1em 1em $brand-dark
             //Need text colours to adapt to whats underneath
+            
+            span
+                $Border-width: 1px
+                text-shadow: -1px -1px $brand-dark, 1px -1px $brand-dark, -1px 1px $brand-dark, 1px 1px $brand-dark,
+                font-weight: 900
+                color: $dynamic-brand-main
+                &.domain-txt
+                    font-size: 0.75rem
 
-            .domain-txt
-                font-size: 0.75rem
-
-            .name-txt
-                font-size: 1.25rem
+                &.name-txt
+                    font-size: 1.25rem
         
         .box-desc
             background-color: rgba($brand-light, 0.8)
@@ -59,8 +62,7 @@
             transition: all 0.5s ease-in-out
             overflow: hidden
 
-            p, 
-            a
+            p
                 margin: 10px
 
         &:hover

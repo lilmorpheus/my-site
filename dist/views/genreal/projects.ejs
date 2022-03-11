@@ -28,7 +28,9 @@
                                 <% if (item.link) {%>
                                     <br>
                                     Link: <a href="<%=item.link%>" target="_blank"><%=item.link%></a><br>
-                                    GitHub Repo: <a href="#" target="_blank"><%=item.GitHub%></a>
+                                <% } %>
+                                <% if (item.GitHub) {%>
+                                    <a href="<%=item.GitHub%>" target="_blank">GitHub Repo</a>
                                 <% } %>
                             </p>
                         </div>
