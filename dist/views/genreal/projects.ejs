@@ -6,27 +6,49 @@
 
     <div class="content">
         <div class="project-grid">
+            <% for (var i = 0; i < 8; i++) { %>
+                <% var item; %>
+                <% item = data.projects[i]; %>
+                <% if (item) { %>
+                    <div class="box" style="background-image: url('/res/<%=item.image%>')">
+                        <div class="box-header">
+                            <span class="domain-txt"><%=item.domain%></span>
+                            |
+                            <span class="name-txt"><%=item.name%></span>
+                        </div>
+                        <div class="box-desc">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Aenean vel lacus lobortis, bibendum lorem vitae, posuere ipsum. 
+                                Donec interdum turpis eu diam finibus, nec ultricies felis vulputate. 
+                                Integer ac dolor odio. Vivamus facilisis lorem ante, vel semper ipsum varius sed. 
+                                Nulla ut scelerisque ipsum. Donec faucibus hendrerit consequat. 
+                                Duis luctus fringilla leo, et vulputate magna laoreet ut. 
+                            </p>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="box empty"></div>
+                <% }%>
+            <% } %>
+            <!--
             <div class="box" style="background-image: url('/res/madvillan.jpg')">
-                <div class="box-header">
-                    <span class="domain-txt">Pygame project</span>
-                    |
-                    <span class="name-txt">A platformer game</span>
-                </div>
-                <div class="box-desc">
-                    <p>
-                        This is a project I completed during my last year at 6Form.
-                        This is a platformer game made using python, this heavily relies on the pygame library.
-                        This was a summative assement that contributed to our final mark.
-                        The strcture of the project was to emulate the developer lifecycle of a software project.
-                        This meant we went through problem defention, designing and developing, 
-                        and finished with testing and verfying.#
-                    </p>
-                </div>
-            </div>
-            
-            
-            
-            
+                    <div class="box-header">
+                        <span class="domain-txt">Pygame project</span>
+                        |
+                        <span class="name-txt">A platformer game</span>
+                    </div>
+                    <div class="box-desc">
+                        <p>
+                            This is a project I completed during my last year at 6Form.
+                            This is a platformer game made using python, this heavily relies on the pygame library.
+                            This was a summative assement that contributed to our final mark.
+                            The strcture of the project was to emulate the developer lifecycle of a software project.
+                            This meant we went through problem defention, designing and developing, 
+                            and finished with testing and verfying.#
+                        </p>
+                    </div>
+                </div>`
             <div class="box">
                 <div class="box-header">
                     <span class="domain-txt">Project Domain</span>
@@ -44,48 +66,49 @@
                     </p>
                 </div>
             </div>
-
-            <div class="box empty">
-                <div class="box-header">
-                    <span class="domain-txt">Project Domain</span>
-                    |
-                    <span class="name-txt">Project Name</span>
-                </div>
-            </div><div class="box empty">
-                <div class="box-header">
-                    <span class="domain-txt">Project Domain</span>
-                    |
-                    <span class="name-txt">Project Name</span>
-                </div>
-            </div>
-
-            <div class="box empty">
-                <div class="box-header">
-                    <span class="domain-txt">Project Domain</span>
-                    |
-                    <span class="name-txt">Project Name</span>
-                </div>
-            </div><div class="box empty">
-                <div class="box-header">
-                    <span class="domain-txt">Project Domain</span>
-                    |
-                    <span class="name-txt">Project Name</span>
-                </div>
-            </div>
-
             <div class="box">
                 <div class="box-header">
                     <span class="domain-txt">Project Domain</span>
                     |
                     <span class="name-txt">Project Name</span>
                 </div>
-            </div><div class="box empty">
+            </div>
+            <div class="box">
                 <div class="box-header">
                     <span class="domain-txt">Project Domain</span>
                     |
                     <span class="name-txt">Project Name</span>
                 </div>
             </div>
+            <div class="box">
+                <div class="box-header">
+                    <span class="domain-txt">Project Domain</span>
+                    |
+                    <span class="name-txt">Project Name</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <span class="domain-txt">Project Domain</span>
+                    |
+                    <span class="name-txt">Project Name</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <span class="domain-txt">Project Domain</span>
+                    |
+                    <span class="name-txt">Project Name</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <span class="domain-txt">Project Domain</span>
+                    |
+                    <span class="name-txt">Project Name</span>
+                </div>
+            </div>
+            -->
         </div>
 
     </div>

@@ -40,7 +40,6 @@ app.get('/client', function(req, res) {
     res.render('index.ejs', {page: 'woi-page'});
 });
 app.get('/projects', function(req, res) {
-    console.log(portfolio)
     res.render('index.ejs', {
         page: 'projects',
         data: portfolio
