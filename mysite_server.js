@@ -37,7 +37,7 @@ app.get('/about', function(req, res) {
 });
 app.get('/client', function(req, res) {
     //res.redirect('http://139.59.167.149/');
-    res.render('index.ejs', {page: 'woi-page'});
+    res.render('index.ejs', {page: 'client'});
 });
 app.get('/projects', function(req, res) {
     res.render('index.ejs', {
