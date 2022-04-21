@@ -32,7 +32,7 @@ app.get('/home', function(req, res) {
     res.render('index.ejs', {page: 'homepage'});
 });
 app.get('/about', function(req, res) {
-    res.render('index.ejs', {page: 'about'})
+    res.render('index.ejs', {page: 'aboutV2'})
     //res.render('index.ejs', {page: 'woi-page'});
 });
 app.get('/client', function(req, res) {
